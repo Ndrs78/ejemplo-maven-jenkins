@@ -29,7 +29,7 @@ pipeline {
                 script {
                 sh "echo 'Build .Jar!'"
                 // Run Maven on a Unix agent.
-                sh './mvnw clean package -e
+                sh './mvnw clean package -e'
                 }
             }
             post {
