@@ -53,7 +53,7 @@ pipeline {
                 script{
                    env.STAGE='Paso 5: Slack'
                    env.channel='D0457H2RV9A'
-                   
+                   sh 'ssh root@192.168.1.1'
                  }
             }
 			post{
