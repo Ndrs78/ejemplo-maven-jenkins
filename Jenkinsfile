@@ -78,5 +78,5 @@ pipeline {
         failure {
             sh "echo 'fase failure'"
         }
-    }
-}
+ }
+
