@@ -64,19 +64,7 @@ pipeline {
 					slackSend color: 'danger',channel: "${env.channel}", message: "[Mentor Devops] [${env.JOB_NAME}] [${BUILD_TAG}] Ejecucion fallida en stage [${env.STAGE}]", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'token-slack'
 				}
 			}
-        }
-    }
-    }
-    post {
-        always {
-            sh "echo 'fase always executed post'"
-        }
-        success {
-            sh "echo 'fase success'"
-        }
-
-        failure {
-            sh "echo 'fase failure'"
-        }
+            }
+      }
  }
-
+ 
