@@ -48,20 +48,20 @@ pipeline {
                 }
             }
         }
-        stage('STAGE TEST') {
+        stage('Paso 5: Slack') {
             steps {
                 script{
-                   env.STAGE='STAGE TEST'
+                   env.STAGE='Paso 5: Slack'
                    env.channel='D0457H2RV9A'
                    
                  }
             }
 			post{
 				success{
-					slackSend color: 'good', channel: "${env.channel}", message: "[Mentor Devops] [${JOB_NAME}] [${BUILD_TAG}] Ejecucion Exitosa", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'token-slack'
+					slackSend color: 'good', channel: "${env.channel}", message: "[Andres Medel] [${JOB_NAME}] [${BUILD_TAG}] Ejecucion Exitosa", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'token-slack'
 				}
 				failure{
-					slackSend color: 'danger',channel: "${env.channel}", message: "[Mentor Devops] [${env.JOB_NAME}] [${BUILD_TAG}] Ejecucion fallida en stage [${env.STAGE}]", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'token-slack'
+					slackSend color: 'danger',channel: "${env.channel}", message: "[Andres Medel] [${env.JOB_NAME}] [${BUILD_TAG}] Ejecucion fallida en stage [${env.STAGE}]", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'token-slack'
 				}
 			}
             }
